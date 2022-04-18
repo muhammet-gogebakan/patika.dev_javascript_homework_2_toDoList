@@ -17,7 +17,7 @@ function newElement (event) {  //newElement fonksiyonu addEventListener parametr
     const TODOLİST = document.querySelector("#task")   //html kullanıcı adı nesnesini değişkene tanımladık
 //    const SCORE = document.querySelector("#score")          //html score (not) nesnesini değişkene tanımladık
     
-    if (TODOLİST.value && !TODOLİST.value.includes(" ")) {
+    if (TODOLİST.value && !TODOLİST.value.includes("  ")) {
         let liDOM = document.createElement('li')    //liste nesnesi oluştur ve liDOM değişkenine ata, ve sonra girilen kullanıcı adı ve not bilgisini liste nesnesine ata, ve görüntüleme belirtilen class özelliklerinde olsun
         liDOM.innerHTML = `${TODOLİST.value}`
         ultoDoListDOM.append(liDOM)                 //oluşturulan listeyi ul (unordered list) nesne sonuna ekle (prepend olsa idi başına eklerdi)
