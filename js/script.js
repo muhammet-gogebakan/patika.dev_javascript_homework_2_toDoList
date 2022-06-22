@@ -8,8 +8,11 @@ const alertDOM = document.querySelector('#liveToast')
 const alertFunction = (title, message, className="warning") => `  
 <div class="alert alert-${className} alert-dismissible fade show" role="alert">
   <strong>${title}</strong> ${message}
-  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+  <button type="button" class="alert btn-close" data-bs-dismiss="alert" aria-label="close"></button>
 </div>`
+
+
+
 
 
 function newElement (event) {  //newElement fonksiyonu addEventListener parametresi olarak tanımlandığı için diğer fonksiyon tanımlama metotlarında (const formHandler = function(event){} gibi) fonksiyon çalışmaz. Fonksiyon içerisinde belirtilen fonksiyonlar, diğer fonksiyon tanımlama metotları ile tanımlanabilir.
@@ -28,6 +31,7 @@ function newElement (event) {  //newElement fonksiyonu addEventListener parametr
             "Listeye eklendi!",
             "success"
         )
+        alertDOM.style.display = "block"
         for (i = 0; i < myNodelist.length; i++) {
             var span = document.createElement("SPAN");
             var txt = document.createTextNode("\u00D7");
@@ -47,6 +51,7 @@ function newElement (event) {  //newElement fonksiyonu addEventListener parametr
             "Eksik Bilgi Girdiniz",
             "danger"
         )
+        alertDOM.style.display = "block"
     }
     
 }
@@ -82,3 +87,8 @@ for (i = 0; i < close.length; i++) {
     div.style.display = "none";
   }
 }
+
+//alert display
+alertDOM.addEventListener("click", function() {
+  alertDOM.style.display = "none";
+})
